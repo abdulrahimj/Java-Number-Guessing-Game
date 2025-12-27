@@ -40,7 +40,9 @@ public class GameController {
 
       } else if (checkMenu == 3) {
          //RESET SCOREBOARD: For both human and computer
-         saveScore("zero");
+         humanScore = 0;
+         compScore = 0;
+         saveScore();
          System.out.println("SCOREBOARD RESET.");
          return;
 
@@ -103,22 +105,18 @@ public class GameController {
 
       boolean isWin = (computer == human);
 
-     String score = view.displayResult(computer, human, isWin);
-     saveScore(score);
+      if (isWin) {
+         humanScore++;
+      } else {
+         compScore++;
+      }
+
+     view.displayResult(computer, human, isWin);
+     saveScore();
    }
 
    //SAVE SCORE TO FILE
-   private void saveScore(String score) {
-
-      if (score.equalsIgnoreCase("zero")) {
-         //RESET SCOREBOARD: for both players
-         humanScore = 0;
-         compScore = 0;
-      } else if (score.equalsIgnoreCase("human")) {
-         humanScore += 1;
-      } else {
-         compScore += 1;
-      }
+   private void saveScore() {
 
       File path = new File("gameScore.txt");
       try(BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {

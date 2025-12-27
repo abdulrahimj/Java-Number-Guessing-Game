@@ -46,7 +46,7 @@ public class GameView {
       }
    }
 
-   public String displayResult(int comp, int human, boolean isWin) {
+   public void displayResult(int comp, int human, boolean isWin) {
       System.out.println("\nNOTICE");
       System.out.println("=======");
       System.out.println("Computer selected: " + comp);
@@ -54,10 +54,8 @@ public class GameView {
 
       if (isWin) {
          System.out.println("Congratulations. You got it!");
-         return "human";
       } else {
          System.out.println("OOPS! You missed it.");
-         return "computer";
       }
    }
 
