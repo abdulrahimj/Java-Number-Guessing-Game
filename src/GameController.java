@@ -120,7 +120,7 @@ public class GameController {
          compScore += 1;
       }
 
-      File path = new File("C:\\Users\\Abdulrahim Jalloh\\Desktop\\gameScore.txt");
+      File path = new File("gameScore.txt");
       try(BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
          writer.write(String.valueOf(humanScore));
          writer.newLine();
@@ -135,7 +135,7 @@ public class GameController {
 
    //LOAD SCORE BEFORE PLAYING
    private void loadScore() {
-      File path = new File("C:\\Users\\Abdulrahim Jalloh\\Desktop\\gameScore.txt");
+      File path = new File("gameScore.txt");
 
       if(!path.exists()) {
          humanScore = 0;
