@@ -39,6 +39,12 @@ public class GameController {
          System.out.println("===================================");
 
       } else if (checkMenu == 3) {
+         //RESET SCOREBOARD: For both human and computer
+         saveScore("zero");
+         System.out.println("SCOREBOARD RESET.");
+         return;
+
+      } else if (checkMenu == 4) {
          //EXIT: Close game
          return;
 
@@ -104,7 +110,11 @@ public class GameController {
    //SAVE SCORE TO FILE
    private void saveScore(String score) {
 
-      if (score.equalsIgnoreCase("human")) {
+      if (score.equalsIgnoreCase("zero")) {
+         //RESET SCOREBOARD: for both players
+         humanScore = 0;
+         compScore = 0;
+      } else if (score.equalsIgnoreCase("human")) {
          humanScore += 1;
       } else {
          compScore += 1;

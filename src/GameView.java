@@ -16,7 +16,8 @@ public class GameView {
       System.out.println("\n--- MENU ---");
       System.out.println("1.New Game");
       System.out.println("2.Continue Game");
-      System.out.println("3.Exit Game");
+      System.out.println("3.Reset Scoreboard");
+      System.out.println("4.Exit Game");
 
       System.out.print("Choice: ");
 
