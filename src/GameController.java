@@ -38,6 +38,10 @@ public class GameController {
          System.out.println("\nGAME CONTINUES WITH PREVIOUS SCORE.");
          System.out.println("===================================");
 
+      } else if (checkMenu == 3) {
+         //EXIT: Close game
+         return;
+
       } else {
          System.out.println("Invalid input. Enter only numbers from the list.");
          System.out.println("Game Exiting");
